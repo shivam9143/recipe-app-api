@@ -20,8 +20,6 @@ services:
       - DB_NAME=devdb
       - DB_USER=shivam
       - DB_PASS=12345
-      - DB_PORT=5432  # new
-
     depends_on:
       - db
 
@@ -30,8 +28,6 @@ services:
     image: postgres:13-alpine
     volumes:
       - dev-db-data:/var/lib/postgres/data
-    ports:
-      - "5432:5432"
     environment:
       - POSTGRES_DB=devdb
       - POSTGRES_USER=shivam
