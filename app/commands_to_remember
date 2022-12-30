@@ -1,0 +1,26 @@
+I know about this problem. After add ssh key, add you ssh key to ssh agent too (from official docs)
+ssh-agent -s
+ssh-add ~/.ssh/id_rsa
+After it all work fine, git can view proper key, before couldn't.
+
+
+docker-compose run --rm app sh -c "python manage.py test";  
+
+docker volume prune   
+
+docker system prune --volumes
+
+docker rm -f $(docker ps -aq)
+
+docker-compose up          
+
+docker volume prune          
+
+
+
+If, when you start your Docker Compose, you're getting:
+PostgreSQL Database directory appears to contain a database; Skipping initialization
+you need to proactively remove the volumes which were set up to store the database.
+The command docker-compose down doesn't do this automatically.
+You can request removal of volumes like this:
+docker-compose down --volumes
